@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+
+
+<h1>Διαγραφή {{tip.start_date}} ?</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-danger" value="Διαγραφή">
+  <a class="btn btn-warning" href="{% url 'diaxoristis:tip_list'%}">Άκυρο</a>
+
+</form>
+
+{% endblock %}
+</div>

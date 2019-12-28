@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load costum_filter_tags %}
+{% block body_block%}
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+    <span class="sr-only">100% Complete</span>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h1>Τρίτο Βήμα!</h1>
+
+  <div class="container">
+    <div class="panel panel panel-warning">
+    <div class="panel-heading">
+      <h3 class="panel-title"> Αποτέλεσμα διαχωρισμού των Tips</h3>
+    </div>
+    <div class="panel-body">
+      <p>Πόστο: {{context.result.posto}} </p>
+      <p>Συνολικά Μεροκάματα : {{context.result.merokamata}} </p>
+      <p>Χρήματα ανα μεροκάματο : {{context.result.merokamato}} €</p>
+      <p>Tips από : {{context.result.date_from|date:'d-m-Y'}}</p>
+      <p>Tips μέχρι : {{context.result.date_until|date:'d-m-Y'}}</p>
+
+      {% if  context.result.ypoloipo < 0 %}
+      <div class="panel panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"> Προσοχή </h3>
+      </div>
+      <div class="panel-body">
+        <p> Με τη στρογγυλοποίηση των μεταβλητών το ποσό που μοιράστηκε είναι μεγαλύτερο και χρειαζόμαστε ακόμα άλλα {{ context.result.ypoloipo|multi }} ευρώ για να είμαστε σωστοί με το άθροισμα.</p>
+        <p> Παρακαλώ ελέγξτε τις καταχωρήσεις σας!!!</p>
+      </div>
+
+
+      {% elif  context.result.ypoloipo > 0 %}
+      <div class="panel panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="panel-title"> Προσοχή </h3>
+      </div>
+      <div class="panel-body">
+      <p>Το υπόλοιπο είναι {{ context.result.ypoloipo }} ευρώ.</p>
+      </div>
+
+      {% else %}
+      <div class="panel panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title"></h3>
+      </div>
+      <div class="panel-body">
+      <p>Δεν υπάρχει υπόλοιπο.</p>
+      </div>
+
+      {% endif %}
+
+
+
+    </div>
+    </div>
+
+
+  </div>
+
+{% for yp in context.result.ypalliloi %}
+
+<div class="panel panel panel-primary">
+<div class="panel-heading">
+  <h3 class="panel-title">{{ yp.name }}</h3>
+</div>
+<div class="panel-body">
+  <p>Μεροκάματα : {{yp.merokamata}} </p>
+  <p>Δικαιούται : {{yp.money}} €</p>
+</div>
+</div>
+
+
+{% endfor %}
+<div class="container">
+
+
+
+      <h2><a class= 'btn btn-success' href="{% url 'diaxoristis:index' %}">Αρχική</a></h2>
+
+
+
+      {% csrf_token%}
+      <form action="{% url 'diaxoristis:step_three' %}" method="GET">
+        <input class= 'btn btn-warning' type="Submit"  name="submit" value="Αποθήκευση"/>
+      </form>
+
+
+
+
+</div>
+{% endblock %}
+</div>

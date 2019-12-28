@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+<div class="jumbotron">
+
+
+<h1>Διαγραφή {{posto.name}} ?</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-danger" value="Διαγραφή">
+  <a class="btn btn-warning" href="{% url 'diaxoristis:posto_list' %}">Άκυρο</a>
+
+</form>
+
+{% endblock %}
+</div>

@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block body_block%}
+
+<div class="container">
+
+
+<h1>
+{% if not form.instance.pk%}
+Δημιουργία Tip
+{% else %}
+Ενημέρωση Tip
+{% endif %}
+</h1>
+
+<form method="post">
+  {% csrf_token%}
+  {{ form.as_p}}
+  <input type="submit" class="btn btn-success" value="Αποθήκευση">
+
+</form>
+</div>
+
+
+{% endblock %}

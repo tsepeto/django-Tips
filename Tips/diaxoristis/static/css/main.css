@@ -1,0 +1,62 @@
+body {
+  background-color: #ADD8E6;
+}
+
+th {
+  background-color: #222222 ;
+  color:  #DBDBDB;
+}
+
+td {
+  background-color: #F2F2F2;
+}
+
+
+.kentro{
+  text-align: :  center;
+}
+
+
+.bg {
+  /* The image used */
+  background-image: url("../images/bgd_index.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index_text{
+
+  position:relative;
+  left: 0%;
+  margin-top:5%;
+  width: 30%;
+
+
+}
+
+.blue_box {
+  position:relative;
+  left: 3%;
+  margin-top:10%;
+  opacity: 0.9;
+  background-color: #23527C;
+  color :white;
+  width: 40%;
+  height: 40%;
+  padding: 2% 2% 2% 2% ;
+  margin: 30px;
+  text-align: center;
+}
+
+
+.index_button{
+  position:relative;
+  left: 0%;
+  margin-top: 30%;
+
+}

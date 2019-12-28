@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block body_block%}
+
+<div class="jumbotron">
+
+<div class=" container ">
+  <div class="row ">
+    <h1 class='kentro'>Λίστα Υπαλλήλων</h1>
+  </div>
+
+</div>
+
+<div class="container">
+
+
+
+<div class="row">
+  <table class="table table-bordered table table-hover" >
+    <tr>
+      <col width="150">
+      <col width="150">
+      <col width="600">
+      <th><h2>Όνομα</h2></th>
+      <th><h2>Μέρη</h2></th>
+      <th width="600">                                 </th>
+
+    </tr>
+
+
+
+    {% for employee in employees %}
+
+      <tr>
+        <td><a class="col-md-8" href="{{employee.id}}"><h3>{{employee.name}}</h3></a></td>
+        <td><h3>{{employee.parts}}</h3></td>
+        <td  width="1000">
+      <h2><a class= 'btn btn-warning' href="{% url 'diaxoristis:employee_update' pk=employee.id %}">Επεξεργασία</a>
+
+      <a class= 'btn btn-danger' href="{% url 'diaxoristis:employee_delete' pk=employee.id %}">Διαγαφή</a></h2>
+        </td></tr>
+    {% endfor %}
+  </table>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+        <h2><a class= 'btn btn-success' href="{% url 'diaxoristis:employee_create' %}">Δημιουργία</a></h2>
+    </div>
+    <div class="col-xs-6 col-md-4"></div>
+    <div class="col-xs-6 col-md-4">
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+{% endblock %}
+</div>

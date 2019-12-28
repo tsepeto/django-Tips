@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block body_block%}
+<div class="jumbotron">
+  <h1>Detail Page!</h1>
+
+  <div class="container">
+
+
+  <div class="row">
+    <table class="table table-bordered table table-hover">
+      <tr>
+        <col width="150">
+        <col width="600">
+        <th><h2>Όνομα</h2></th>
+        <td><h3><a href="#">{{posto_detail.name}}</a></h3></td>
+      </tr>
+
+    </table>
+
+  </div>
+  </div>
+
+
+
+
+
+  <div class="container">
+      <p><a class= 'btn btn-success' href="{% url 'diaxoristis:posto_list' %}">Πίσω</a>
+
+  </div>
+
+{% endblock %}
+</div>

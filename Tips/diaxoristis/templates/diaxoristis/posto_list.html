@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block body_block%}
+<div class="jumbotron">
+
+
+<div class="container">
+<h1>Πόστα!</h1>
+<table class="table table-bordered table table-hover" >
+  <tr>
+
+    <col width="150">
+    <col width="600">
+    <th><h2>Όνομα</h2></th>
+
+    <th width="600">                                 </th>
+
+  </tr>
+
+
+
+  {% for posto in posta %}
+
+
+  <tr>
+    <td><a class="col-md-8" href="{% url 'diaxoristis:posto_detail' pk=posto.id %}"><h3>{{posto.name}}</h3></a></td>
+
+    <td  width="1000">
+  <h2><a class= 'btn btn-warning' href="{% url 'diaxoristis:posto_update' pk=posto.id %}">Επεξεργασία</a>
+
+  <a class= 'btn btn-danger' href="{% url 'diaxoristis:posto_delete' pk=posto.id %}">Διαγαφή</a></h2>
+    </td></tr>
+  {% endfor %}
+</table>
+
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+      <h2><a class= 'btn btn-success' href="{% url 'diaxoristis:posto_create' %}">Δημιουργία</a></h2>
+  </div>
+  <div class="col-xs-6 col-md-4"></div>
+  <div class="col-xs-6 col-md-4">
+
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}
+</div>

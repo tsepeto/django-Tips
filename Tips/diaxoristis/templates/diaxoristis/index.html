@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <title>Tips</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+  </head>
+  <body class="bg">
+    <nav class='navbar navbar-inverse navbar-statick-top nav-color'>
+      <ul class='nav navbar-nav '>
+        <a class="navbar-brand glyphicon glyphicon-piggy-bank eikona" href="#"></a>
+        <li><a class = 'navbar-link' href="{% url 'diaxoristis:index' %}">Αρχική</a></li>
+        <li><a class = 'navbar-link' href="{% url 'diaxoristis:employee_list' %}">Υπάλληλοι</a></li>
+        <li><a class = 'navbar-link' href="{% url 'diaxoristis:posto_list' %}">Πόστα</a></li>
+        <li><a class = 'navbar-link' href="{% url 'diaxoristis:tip_list' %}">Tips</a></li>
+      </ul>
+
+    </nav>
+
+
+
+
+  <div class="blue_box">
+
+          <h1>Διαχωριστής των Tips</h1>
+          <h3>Ο εύκολος τρόπος να χωρίζεις τα tips με τους συναδέλφους σου!</h3>
+
+          <h2><a class= 'btn btn-success btn-lg index_button' href="{% url 'diaxoristis:step_one' %}">Χώρισε τα Tips σου</a></h2>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
